@@ -2,7 +2,6 @@
 	class MatchDAO{
 		
 		public function insert($match, $connection){
-			echo $match->players['one'];
 			$query = "INSERT INTO `match` (player_one, team_one, goal_one, goal_two, team_two, player_two, date) VALUES ('".$match->players['one']."',".$match->teams['one'].",".$match->goals['one'].",".$match->goals['two'].",".$match->teams['two'].",'".$match->players['two']."','".$match->date."')";
 			echo $query;
 			$result = mysqli_query($connection, $query);

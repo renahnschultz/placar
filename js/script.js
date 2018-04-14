@@ -4,7 +4,7 @@ function autoCompleteClubes(id){
     minLength: 2,
     source: function( request, response ) {
       $.ajax({
-        url: "autocomplete.php",
+        url: "servicos/autocomplete.php",
         type: "POST",
         dataType : "json",
         data: {
