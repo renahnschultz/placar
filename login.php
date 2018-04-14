@@ -4,8 +4,10 @@
   <?php
   session_start();
   ini_set('session.gc_maxlifetime', 1);
-  setcookie('ultimo_login', "aaa");
-  require('menu.html');
+  if(isset($_SESSION['id_user'])){
+    header('Location: index.php');
+  }
+  require('menu.php');
   require('login_defs.php');
   require('header.html');
   ?>
@@ -26,7 +28,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <form class="col-md-6" id="formLogin"  style="padding-top: 20px;padding-bottom: 20px;" method="POST" action="logar.php" target="_blank">
+      <form class="col-md-6" id="form-login"  style="padding-top: 20px;padding-bottom: 20px;" method="POST" action="servicos/logar.php" target="_blank">
         <div class="row">
           <div class="form-group col-md-12">
             <label for="username-login">Username</label>
@@ -116,6 +118,11 @@
     $("#form-register").submit(function() {
       event.preventDefault();
       submitForm("#form-register");
+    });
+    $("#form-login").submit(function() {
+      event.preventDefault();
+      submitForm("#form-login");
+      location.reload();
     });
   </script>
 </body>

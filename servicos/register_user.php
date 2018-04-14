@@ -13,7 +13,7 @@ if(!isset($_POST['first-name'])
 }
 
 $user = new User($_POST['first-name'], $_POST['last-name'], $_POST['username'], $_POST['email'], $_POST['born'], $_POST['password']);
-echo $user->name;
+
 $userDAO = new UserDAO;
 $userDAO->insert($user,$connection);
 

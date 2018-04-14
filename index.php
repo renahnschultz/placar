@@ -4,7 +4,10 @@
   <?php
   session_start();
   ini_set('session.gc_maxlifetime', 1);
-  require('menu.html');
+  if(!isset($_SESSION['id_user'])){
+    header('Location: login.php');
+  }
+  require('menu.php');
   require('login_defs.php');
   require('header.html');
   ?>
@@ -95,10 +98,6 @@
       </div>
     </div>
   </form>
-
-
-
-
   <script>
     $("#team-1-label").autocomplete(autoCompleteClubes("#team-1"));
     $("#team-2-label").autocomplete(autoCompleteClubes("#team-2"));

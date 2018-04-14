@@ -41,4 +41,5 @@ function logout(){
   $.post("logout.php", "").done(function(data) {
     location.reload();
   })
+  location.reload();
 }

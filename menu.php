@@ -1,3 +1,13 @@
+<?php
+	$botao_login;
+	if(isset($_SESSION['id_user'])){
+		$botao_login = '<button type="button" onclick="logout()" class="btn btn-outline-danger" style="float: right ;">Logout</a>';
+	}else{
+		$botao_login = '<a href="login.php" class="btn btn-outline-primary" style="float: right ;">Sign-in</a>';
+	}
+
+?>
+
 <html>
 <body>
 	<nav class="navbar sticky-top navbar-expand-md navbar-light" style="background-color: #fafafa;">
@@ -14,7 +24,7 @@
 				</li>
 			</ul>
 		</div>
-		<a href="login.php" class="btn btn-outline-primary" style="float: right ;">Sign-in</a>
+		<?=$botao_login?>
 	</nav>
 </body>
 </html>
