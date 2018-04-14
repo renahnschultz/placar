@@ -4,28 +4,20 @@
   <?php
   session_start();
   ini_set('session.gc_maxlifetime', 1);
-  setcookie('ultimo_login', "aaa");
   require('menu.html');
-  require('login.php');
+  require('login_defs.php');
+  require('header.html');
   ?>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="js/jquery-ui/jquery-ui.css" type="text/css">
-  <script src="js/script.js"></script>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-ui/jquery-ui.js"></script>
-  <script defer src="js/fontawesome-all.js"></script>
-
 
   <title>Placar FIFA</title>
 </head>
 <body>
+  <div class="page-title">
+    <span>New game!</span>
+  </div>
   <form 
     id="form-match" 
-    action="save_match.php" 
+    action="servicos/save_match.php" 
     class="container" 
     style="margin-top: 30px;">
     <div class="row">

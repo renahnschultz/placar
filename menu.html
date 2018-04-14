@@ -2,7 +2,7 @@
 <body>
 	<nav class="navbar sticky-top navbar-expand-md navbar-light" style="background-color: #fafafa;">
 		<a class="navbar-brand" href="#">
-			hehe
+			<i class="fas fa-gamepad"></i> Placar
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -10,57 +10,11 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="#">Jogo <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="index.php">New game <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>
-		<button type="button"  data-toggle="modal" data-target="#exampleModalLong" class="btn btn-outline-primary" style="float: right ;">Sign-in</button>
+		<a href="login.php" class="btn btn-outline-primary" style="float: right ;">Sign-in</a>
 	</nav>
-
-
-
-
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<form id="formLogin" method="POST" action="logar.php" target="_blank">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Sign in</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div class="row" >
-							<div class="form-group col-md-12">
-								<label for="email">Email</label>
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1">@</span>
-									</div>
-									<input type="email" class="form-control form-control-lg" id="emailLogin" name="emailLogin" placeholder="email@example.com">
-								</div>
-							</div>
-
-							<div class="form-group col-md-12">
-								<label for="name">Password</label>
-								<div class="input-group mb-2">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
-									</div>
-									<input type="password" class="form-control form-control-lg" placeholder="Password" id="passwordLogin" name="passwordLogin">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<a href="register.php">Register now</a>
-						<button type="submit" class="btn btn-primary">Login</button>
-					</div>
-				</div>
-			</form>
-		</div>
-	</div>
 </body>
 </html>

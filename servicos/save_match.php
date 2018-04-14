@@ -1,7 +1,7 @@
 <?php
 	require('connection.php');
-	require('matchDAO.php');
-	require('match.php');
+	require('../entidades/matchDAO.php');
+	require('../entidades/match.php');
 
 	if(!isset($_POST['team-1']) 
 		|| !isset($_POST['team-2']) 

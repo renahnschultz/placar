@@ -21,6 +21,10 @@
 	color: #fff;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	margin-bottom: 15px;
 	font-size: 20px;
+}
+.footer-brand{
+	padding: 15px;
+	font-size: 28px;
+	text-align: center;
 }
