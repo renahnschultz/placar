@@ -2,11 +2,7 @@
 <html lang="pt_BR">
 <head>
   <?php
-  session_start();
-  ini_set('session.gc_maxlifetime', 1);
-  if(!isset($_SESSION['id_user'])){
-    header('Location: login.php');
-  }
+  require('servicos/login_required.php');
   require('menu.php');
   require('login_defs.php');
   require('header.html');
@@ -107,8 +103,6 @@
       submitForm("#form-match");
     });
   </script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/bootstrap.min.js" ></script>
 
   </body>
   </html>

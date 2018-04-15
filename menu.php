@@ -1,10 +1,19 @@
 <?php
-	$botao_login;
-	if(isset($_SESSION['id_user'])){
-		$botao_login = '<button type="button" onclick="logout()" class="btn btn-outline-danger" style="float: right ;">Logout</a>';
-	}else{
-		$botao_login = '<a href="login.php" class="btn btn-outline-primary" style="float: right ;">Sign-in</a>';
-	}
+$botao_login;
+if(isset($_SESSION['id_user'])){
+	$botao_login = '<div class="dropdown">
+			<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				'.$_SESSION['name_user'].'
+			</button>
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="profile.php"><i class="fas fa-user"></i> Profile</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+			</div>
+		</div>';
+}else{
+	$botao_login = '<a href="login.php" class="btn btn-outline-primary" style="float: right ;">Sign-in</a>';
+}
 
 ?>
 
@@ -26,5 +35,6 @@
 		</div>
 		<?=$botao_login?>
 	</nav>
+</nav>
 </body>
 </html>

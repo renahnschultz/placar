@@ -16,9 +16,9 @@
 			$_SESSION['login_user'] = $row['username'];
 			$_SESSION['email_user'] = $row['email'];
 			$_SESSION['id_user'] = $row['id'];
+			$_SESSION['name_user'] = $row['name'];
 		}
 		echo "Login successfully.";
-		header('Location: ../index.php');
 	}else{
 		echo 'Fail.';
 	}
