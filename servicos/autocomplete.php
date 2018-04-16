@@ -11,9 +11,10 @@ if($acao == 'autocomplete'):
 
 	$result = mysqli_query($connection,$sql);
 
-	$response = array();
-	while($row = mysqli_fetch_array($result) ){
-	  $response[] = array("value"=>$row['id'],"label"=>$row['nome']);
+	if ($result->num_rows > 0) {
+		while($row = mysqli_fetch_array($result) ){
+			$response[] = array("value"=>$row['id'],"label"=>$row['nome']);
+		}
 	}
 	echo json_encode($response);
 endif;

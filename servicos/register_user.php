@@ -10,6 +10,7 @@ if(!isset($_POST['first-name'])
 	|| !isset($_POST['born']) 
 	|| !isset($_POST['password'])){
 	echo "You need to fill all informations.";
+return;
 }
 
 $user = new User($_POST['first-name'], $_POST['last-name'], $_POST['username'], $_POST['email'], $_POST['born'], $_POST['password']);

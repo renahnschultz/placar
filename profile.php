@@ -38,7 +38,7 @@
             User options
           </div>
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action border-0"><i class="fas fa-user-plus"></i> Add friends</a>
+            <a href="add_friend.php" class="list-group-item list-group-item-action border-0"><i class="fas fa-user-plus"></i> Add friends</a>
           </div>
         </div>
       </div>
@@ -50,14 +50,6 @@
   ?>
 
   <script>
-    $("#form-register").submit(function() {
-      event.preventDefault();
-      submitForm("#form-register");
-    });
-    $("#form-login").submit(function() {
-      event.preventDefault();
-      submitForm("#form-login");
-    });
   </script>
 </body>
 </html>
