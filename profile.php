@@ -2,10 +2,20 @@
 <html lang="pt_BR">
 <head>
   <?php
+  require('servicos/connection.php');
   require('servicos/login_required.php');
   require('menu.php');
   require('login_defs.php');
   require('header.html');
+  $requests_number;
+
+  $requests;
+
+  $query_number = "SELECT count(f.id_user_accept) num FROM friends f WHERE f.id_user_accept = ".$_SESSION['id_user'];
+  $result = mysqli_query($connection,$query_number);
+  while($row = mysqli_fetch_array($result) ){
+    $requests_number = $row['num'];
+  }
   ?>
   <title><?=$_SESSION['name_user']?> - Profile</title>
 </head>
@@ -38,7 +48,7 @@
             User options
           </div>
           <div class="list-group">
-            <a href="add_friend.php" class="list-group-item list-group-item-action border-0"><i class="fas fa-user-plus"></i> Add friends</a>
+            <a href="add_friend.php" class="list-group-item list-group-item-action border-0"><i class="fas fa-user-plus"></i> Add friends <span class="float-right badge badge-primary badge-pill"><?=$requests_number?></span></a>
           </div>
         </div>
       </div>

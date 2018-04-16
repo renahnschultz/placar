@@ -12,8 +12,8 @@ if(!isset($_POST['first-name'])
 	echo "You need to fill all informations.";
 return;
 }
-
-$user = new User($_POST['first-name'], $_POST['last-name'], $_POST['username'], $_POST['email'], $_POST['born'], $_POST['password']);
+$password = hash('sha256', $_POST['password']);
+$user = new User($_POST['first-name'], $_POST['last-name'], $_POST['username'], $_POST['email'], $_POST['born'], $password);
 
 $userDAO = new UserDAO;
 $userDAO->insert($user,$connection);

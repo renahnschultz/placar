@@ -6,6 +6,7 @@
   require('menu.php');
   require('login_defs.php');
   require('header.html');
+  require('servicos/friend_requests.php');
 
 
   require('servicos/invite_friend.php');
@@ -20,7 +21,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6" style="padding-top: 15px;">
-        REQUESTS HERE
+        <div class="card border-0 bg-primary">
+          <div class="card-header text-white">
+            Friendship invitations
+          </div>
+          <ul class="list-group">
+            <?=$requests?>
+          </ul>
+        </div>
       </div>
       <div class="col-md-6">
         <form id="form-invite"  style="padding-top: 20px;padding-bottom: 20px;" method="POST">
@@ -39,9 +47,14 @@
             </div>
           </div>
         </form>
-        <ul class="list-group">
-          <?=$result_invite?>
-        </ul>
+        <div class="card border-0">
+          <div class="card-header">
+            Search results
+          </div>
+          <ul class="list-group">
+            <?=$result_invite?>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

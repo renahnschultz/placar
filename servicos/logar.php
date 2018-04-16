@@ -9,7 +9,7 @@ if (!isset($_POST['username'])
 return;
 }
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = hash('sha256',$_POST['password']);
 $query = "SELECT * FROM `user` WHERE (email = '$username' OR username = '$username') AND password = '$password'";
 $user = $connection->query($query);
 if ($user->num_rows > 0) {
