@@ -7,50 +7,26 @@
   require('menu.php');
   require('login_defs.php');
   require('header.html');
-  $requests_number;
-
-  $requests;
-
-  $query_number = "SELECT count(f.id_user_accept) num FROM friends f WHERE f.id_user_accept = ".$_SESSION['id_user'];
-  $result = mysqli_query($connection,$query_number);
-  while($row = mysqli_fetch_array($result) ){
-    $requests_number = $row['num'];
-  }
+  require('servicos/profile_services.php');
   ?>
   <title><?=$_SESSION['name_user']?> - Profile</title>
 </head>
 <body>
-  <div class="page-title">
-    <?=$_SESSION['name_user']?>
-  </div>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8" style="padding-top: 15px;">
-        <div class="col-md-12">
-          <h1><?=$_SESSION['name_user']?></h1>
+      <div class="col-md-3">
+        <div class="row bg-info text-light ">
+          <div class="col-md-12" style="padding-top: 20px;"><img src="images/profile.jpg" class="rounded mx-auto d-block" style="width: 50%;"></div>
+          <span class="col-md-12" style="text-align: center;"><h3><?=$_SESSION['name_user']?></h3></span>
         </div>
-        <div class="form-group row">
-          <label for="email" class="font-weight-bold col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="email" value="<?=$_SESSION['email_user']?>">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="username" class="font-weight-bold col-sm-2 col-form-label">Username</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="username" value="<?=$_SESSION['login_user']?>">
-          </div>
+        <div class="list-group row">
+          <a href="add_friend.php" class="list-group-item list-group-item-action border-0 border-radius-none bg-light"><i class="fas fa-user-plus"></i> Add friends <?=$requests_number?></a>
+          <a href="add_friend.php" class="list-group-item list-group-item-action border-0 border-radius-none bg-light"><i class="fas fa-users"></i> My friends <?=$friends_number?></a>
+          <a href="add_friend.php" class="list-group-item list-group-item-action border-0 border-radius-none bg-light"><i class="fas fa-gamepad"></i> My games <?=$requests_number?></a>
         </div>
       </div>
-      <div class="col-md-4" style="padding-top: 15px;">
-        <div class="card border-0" style="width: 18rem;">
-          <div class="card-header">
-            User options
-          </div>
-          <div class="list-group">
-            <a href="add_friend.php" class="list-group-item list-group-item-action border-0"><i class="fas fa-user-plus"></i> Add friends <span class="float-right badge badge-primary badge-pill"><?=$requests_number?></span></a>
-          </div>
-        </div>
+      <div class="col-md-9" style="padding-top: 15px;">
+
       </div>
     </div>
   </div>

@@ -28,3 +28,6 @@
 	font-size: 28px;
 	text-align: center;
 }
+.border-radius-none{
+	border-radius: none;
+}

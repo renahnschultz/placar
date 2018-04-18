@@ -15,7 +15,6 @@ class User{
 		$this->born = $born;
 		$this->password = $password;
 	}
-
 }
 
 ?>
